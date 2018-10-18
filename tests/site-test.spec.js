@@ -1,7 +1,11 @@
 describe('PHP Travels Local Server Test', () => {
   it('Tests the Landing Page of PHP Travels', () => {
     cy.visit('/');
-    cy.get('header').should('have.attr', 'src', `./images/phptravels-logo.png`);
+    cy.get('header img').should(
+      'have.attr',
+      'src',
+      `./images/phptravels-logo.png`
+    );
     cy.get('h2').should('have.html', 'Application Test Drive.');
     cy.get('.dropdown-menu li')
       .contains('Demo')
